@@ -1,5 +1,7 @@
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class BankUser {
@@ -61,6 +63,12 @@ public class BankUser {
             return true;
         }
         return false;
+    }
+
+    public List<String> getTransactionHistory() {
+        return transactions.stream()
+                           .map(Transactions::toString)
+                           .collect(Collectors.toList());
     }
 
     
